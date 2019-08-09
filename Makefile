@@ -13,7 +13,7 @@ init:
 	@echo "initialize remote state file"
 	cd layers/$(LAYER) && \
 	rm -rf .terraform/modules/ && \
-	terraform init -backend-config="bucket=$(DEV_BUCKET)" -backend-config="key=$(DEV_STATE_FILE)" -backend-config="dynamodb_table=$(DEV_STATE_LOCK_TABLE)" -backend-config="region=$(DEV_REGION)" 
+	terraform init 
 
 
 validate: init
